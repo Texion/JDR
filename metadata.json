@@ -1,0 +1,5 @@
+{
+  "name": "Générateur de Fiche de Personnage JDR",
+  "description": "Une application élégante pour créer des personnages de jeux de rôle, avec distribution de statistiques, choix de races et génération d'histoire par IA.",
+  "requestFramePermissions": []
+}

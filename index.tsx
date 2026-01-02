@@ -1,0 +1,1 @@
+// Ce fichier est vide car tout le code a été déplacé dans index.html pour permettre un fonctionnement autonome local.
