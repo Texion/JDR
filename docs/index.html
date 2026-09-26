@@ -1,0 +1,1016 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#100d17">
+  <meta name="description" content="Fiche de personnage JDR installable et utilisable hors connexion.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Compagnon JDR">
+  <!-- Fichier autonome : aucune dépendance externe -->
+  <title>Compagnon JDR — Joueur</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjZjNjZDdjIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZGNhNzQ2Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMTYiIGZpbGw9IiMxNzEyMjAiLz4KICA8cGF0aCBkPSJNMjU2IDc2IDQwMCAxNTZ2MTY4TDI1NiA0MzYgMTEyIDMyNFYxNTZaIiBmaWxsPSIjMjExODJjIiBzdHJva2U9InVybCgjZykiIHN0cm9rZS13aWR0aD0iMjAiLz4KICA8cGF0aCBkPSJNMzI4IDE4N2MtMTgtMjUtNDMtMzktNzMtMzktNTkgMC0xMDEgNDUtMTAxIDEwOHM0MiAxMDggMTAxIDEwOGMzMSAwIDU3LTE0IDc1LTQxbC0zNC0yNWMtMTAgMTUtMjMgMjMtNDAgMjMtMzEgMC01Mi0yNi01Mi02NXMyMS02NSA1Mi02NWMxNiAwIDMwIDggNDAgMjNaIiBmaWxsPSJ1cmwoI2cpIi8+CiAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIxOTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U3Yjg1YyIgc3Ryb2tlLW9wYWNpdHk9Ii4xMyIgc3Ryb2tlLXdpZHRoPSI4Ii8+Cjwvc3ZnPgo=">
+  <link rel="apple-touch-icon" href="data:image/png;base64,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">
+  <style>
+:root {
+  color-scheme: dark;
+  --bg: #100d17;
+  --bg-top: #21172b;
+  --surface: #1a1624;
+  --surface-raised: #242030;
+  --surface-soft: #2b2438;
+  --gold: #e7b85c;
+  --gold-muted: #b89757;
+  --text: #f5f0e8;
+  --muted: #bdb4c9;
+  --health: #e35261;
+  --mana: #568ae6;
+  --stamina: #4eb985;
+  --armor: #00e5ff;
+  --random: #ffd54f;
+  --danger: #ff6572;
+  --line: rgba(255,255,255,.08);
+  --shadow: 0 18px 50px rgba(0,0,0,.32);
+  --radius: 20px;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { min-height: 100%; background: var(--bg); }
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 50% -10%, rgba(117, 65, 135, .26), transparent 38rem),
+    var(--bg);
+  font-size: 16px;
+  line-height: 1.45;
+  -webkit-tap-highlight-color: transparent;
+}
+button, input, textarea, select { font: inherit; }
+button { touch-action: manipulation; }
+button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 3px solid rgba(231,184,92,.42);
+  outline-offset: 2px;
+}
+
+.app-shell { width: min(100%, 760px); min-height: 100dvh; margin: 0 auto; position: relative; }
+.app-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: calc(64px + env(safe-area-inset-top));
+  padding: env(safe-area-inset-top) 18px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(16,13,23,.82);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(18px);
+}
+.brand { display: flex; gap: 11px; align-items: center; color: var(--text); text-decoration: none; }
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(231,184,92,.5);
+  border-radius: 12px;
+  color: #2d2005;
+  background: linear-gradient(145deg, #f3cd7c, var(--gold));
+  box-shadow: 0 8px 22px rgba(231,184,92,.18);
+  font: 800 19px/1 Georgia, serif;
+}
+.brand strong, .brand small { display: block; }
+.brand strong { font-size: 15px; letter-spacing: .01em; }
+.brand small { color: var(--muted); font-size: 12px; }
+.save-state { max-width: 150px; color: var(--gold-muted); font-size: 12px; line-height: 1.2; text-align: right; }
+
+#screen { padding: 22px 18px calc(106px + env(safe-area-inset-bottom)); }
+.screen-stack { display: grid; gap: 16px; }
+.section-heading {
+  margin: 10px 2px 0;
+  color: var(--gold-muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .13em;
+}
+.page-title { margin: 0; font-size: clamp(28px, 7vw, 36px); line-height: 1.12; }
+.page-subtitle { margin: -8px 0 2px; color: var(--muted); font-size: 14px; }
+
+.card {
+  border: 1px solid rgba(255,255,255,.045);
+  border-radius: var(--radius);
+  background: rgba(26,22,36,.95);
+  box-shadow: 0 10px 30px rgba(0,0,0,.14);
+}
+.hero-card {
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  grid-template-columns: 92px minmax(0,1fr);
+  gap: 17px;
+  align-items: center;
+  padding: 18px;
+}
+.hero-card::after {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  right: -85px;
+  top: -95px;
+  border: 1px solid rgba(231,184,92,.16);
+  border-radius: 50%;
+  box-shadow: 0 0 0 24px rgba(231,184,92,.025), 0 0 0 48px rgba(231,184,92,.02);
+  pointer-events: none;
+}
+.avatar {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 92px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 21px;
+  color: var(--gold);
+  background: linear-gradient(145deg, #5b3d68, #2d2440);
+  border: 1px solid rgba(231,184,92,.24);
+  font-size: 30px;
+  font-weight: 750;
+}
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+.hero-copy { min-width: 0; }
+.hero-copy h1 { margin: 0 0 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 23px; }
+.hero-copy p { margin: 3px 0; overflow: hidden; color: var(--muted); font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+
+.stat-list { display: grid; gap: 12px; }
+.stat-card { width: 100%; padding: 15px 16px; color: var(--text); text-align: left; cursor: pointer; }
+.stat-row { display: flex; align-items: center; gap: 10px; }
+.stat-glyph {
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  font-weight: 900;
+}
+.stat-name { font-weight: 700; }
+.stat-armor { color: var(--armor); font-size: 12px; font-weight: 750; }
+.stat-value { margin-left: auto; font-size: 14px; color: var(--muted); }
+.stat-value strong { color: var(--text); font-size: 20px; }
+.progress { height: 10px; margin-top: 11px; overflow: hidden; display: flex; border-radius: 99px; background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.progress-value { width: var(--progress); background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 72%, transparent), var(--accent)); }
+.progress-armor { width: var(--armor-progress); background: linear-gradient(90deg,#00a7c4,var(--armor)); }
+
+.attribute-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 9px; }
+.attribute-card {
+  min-width: 0;
+  height: 84px;
+  padding: 10px 5px;
+  cursor: pointer;
+  color: var(--text);
+}
+.attribute-card span, .attribute-card strong { display: block; text-align: center; }
+.attribute-card span { color: var(--gold-muted); font-size: 12px; font-weight: 800; letter-spacing: .05em; }
+.attribute-card strong { margin-top: 3px; font-size: 25px; }
+.attribute-card:nth-child(n+5) { grid-column: span 1; }
+
+.skill-list, .talent-list { display: grid; gap: 11px; }
+.skill-card {
+  width: 100%;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 42px minmax(0,1fr) auto;
+  gap: 13px;
+  align-items: start;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+.skill-icon { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; color: var(--accent); background: color-mix(in srgb,var(--accent) 14%, transparent); font-size: 20px; }
+.skill-main { min-width: 0; }
+.skill-main strong { display: block; font-size: 17px; }
+.skill-main p { margin: 5px 0 0; color: var(--muted); font-size: 13px; }
+.skill-cost { color: var(--gold-muted) !important; font-size: 12px !important; font-weight: 700; }
+.skill-amount { color: var(--accent); text-align: right; }
+.skill-amount strong, .skill-amount span { display: block; }
+.skill-amount strong { font-size: 22px; }
+.skill-amount span { font-size: 10px; font-weight: 800; text-transform: uppercase; }
+.talent-card { padding: 17px; }
+.talent-card strong { font-size: 16px; }
+.talent-card p { margin: 5px 0 0; color: var(--muted); font-size: 13px; }
+.empty-state { padding: 28px 20px; color: var(--muted); text-align: center; }
+.empty-state strong { display: block; margin-bottom: 4px; color: var(--text); }
+
+.settings-card { padding: 17px; }
+.settings-section-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; }
+.settings-section-head .section-heading { margin: 0 2px; }
+.btn-compact { min-height: 38px; padding: 7px 12px; font-size: 14px; }
+.install-note { width: 100%; display: grid; grid-template-columns: 42px 1fr auto; gap: 13px; align-items: center; padding: 15px 16px; color: var(--text); text-align: left; cursor: pointer; }
+.install-note .note-icon { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 13px; color: var(--gold); background: rgba(231,184,92,.12); font-size: 21px; }
+.install-note strong { display: block; }
+.install-note p { margin: 3px 0 0; color: var(--muted); font-size: 13px; }
+.install-note .note-arrow { color: var(--gold); font-size: 24px; }
+.onboarding-card { padding: 18px; border-color: rgba(231,184,92,.22); background: linear-gradient(145deg,rgba(57,42,70,.96),rgba(26,22,36,.97)); }
+.onboarding-head { display: flex; align-items: center; gap: 12px; }
+.onboarding-head .note-icon { display: grid; place-items: center; width: 42px; height: 42px; flex: 0 0 auto; border-radius: 13px; color: #2d2005; background: var(--gold); font-size: 21px; }
+.onboarding-head strong { display: block; font-size: 17px; }
+.onboarding-head span { display: block; margin-top: 2px; color: var(--muted); font-size: 13px; }
+.install-steps { margin: 16px 0; padding: 0; display: grid; gap: 9px; list-style: none; counter-reset: install-step; }
+.install-steps li { counter-increment: install-step; display: grid; grid-template-columns: 28px 1fr; gap: 9px; align-items: center; color: var(--muted); font-size: 14px; }
+.install-steps li::before { content: counter(install-step); display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; color: var(--gold); background: rgba(231,184,92,.12); font-weight: 800; }
+.onboarding-actions { display: flex; justify-content: flex-end; }
+.install-dialog-note { padding: 12px 14px; border-radius: 13px; color: var(--muted); background: rgba(231,184,92,.08); font-size: 13px; }
+.avatar-editor { display: flex; gap: 14px; align-items: center; padding-bottom: 15px; border-bottom: 1px solid var(--line); }
+.avatar-editor .avatar { width: 74px; border-radius: 18px; font-size: 24px; }
+.avatar-editor-copy { min-width: 0; }
+.avatar-editor-copy strong, .avatar-editor-copy span { display: block; }
+.avatar-editor-copy span { margin: 2px 0 9px; color: var(--muted); font-size: 12px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 3px; }
+.form-grid .field { margin-top: 10px; }
+.form-grid .span-2 { grid-column: 1 / -1; }
+.maximum-grid { display: grid; gap: 11px; }
+.maximum-field { display: grid; grid-template-columns: 12px 1fr; gap: 10px; align-items: center; }
+.maximum-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px color-mix(in srgb,var(--accent) 45%,transparent); }
+.maximum-field .field { margin: 0; }
+.editable-list { display: grid; gap: 10px; }
+.editable-row { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 10px; align-items: center; padding: 14px 8px 14px 16px; }
+.editable-copy { min-width: 0; }
+.editable-copy strong, .editable-copy span { display: block; }
+.editable-copy strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.editable-copy span { margin-top: 3px; color: var(--muted); font-size: 12px; }
+.editable-copy .accent { color: var(--accent); font-weight: 700; }
+.row-actions { display: flex; }
+.icon-btn { width: 42px; height: 42px; border: 0; border-radius: 12px; color: var(--muted); background: transparent; cursor: pointer; font-size: 18px; }
+.icon-btn:hover { background: rgba(255,255,255,.06); }
+.icon-btn.danger { color: var(--danger); }
+.backup-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.backup-help { margin: 12px 0 0; color: var(--muted); font-size: 13px; }
+.segment { display: grid; grid-template-columns: repeat(4,1fr); gap: 6px; }
+.segment.range-segment { grid-template-columns: 1fr 1fr; }
+.segment button { min-height: 42px; padding: 7px 6px; border: 1px solid rgba(255,255,255,.13); border-radius: 11px; color: var(--muted); background: rgba(10,8,15,.35); cursor: pointer; font-size: 13px; }
+.segment button.is-selected { color: var(--segment-color,var(--gold)); border-color: color-mix(in srgb,var(--segment-color,var(--gold)) 55%,transparent); background: color-mix(in srgb,var(--segment-color,var(--gold)) 15%,transparent); font-weight: 750; }
+.amount-grid, .cost-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.cost-grid { grid-template-columns: repeat(3,1fr); }
+.textarea-wrap { position: relative; }
+.textarea-wrap textarea { padding-right: 52px; }
+.textarea-done { position: absolute; right: 7px; top: 32px; width: 38px; height: 38px; border: 0; border-radius: 11px; color: #2d2005; background: var(--gold); cursor: pointer; font-size: 18px; font-weight: 900; }
+.field-hint { color: var(--muted); font-size: 12px; }
+.form-error { min-height: 20px; margin: 12px 0 0; color: var(--danger); font-size: 13px; }
+.hidden { display: none !important; }
+
+.bottom-nav {
+  position: fixed;
+  z-index: 30;
+  bottom: 0;
+  left: 50%;
+  width: min(100%,760px);
+  height: calc(76px + env(safe-area-inset-bottom));
+  padding: 7px 18px env(safe-area-inset-bottom);
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  background: rgba(26,22,36,.92);
+  border-top: 1px solid var(--line);
+  backdrop-filter: blur(20px);
+}
+.nav-item { border: 0; border-radius: 18px; color: var(--muted); background: transparent; cursor: pointer; font-size: 12px; }
+.nav-item span { display: block; }
+.nav-icon { margin-bottom: 2px; font-size: 22px; line-height: 1; }
+.nav-item.is-active { color: var(--gold); background: rgba(231,184,92,.11); }
+
+.modal-backdrop {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  padding: max(18px,env(safe-area-inset-top)) 16px max(18px,env(safe-area-inset-bottom));
+  display: grid;
+  place-items: center;
+  background: rgba(4,3,7,.76);
+  backdrop-filter: blur(8px);
+  animation: fade-in .16s ease-out;
+}
+.modal {
+  width: min(100%,500px);
+  max-height: calc(100dvh - 36px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 24px;
+  background: var(--surface-raised);
+  box-shadow: var(--shadow);
+  animation: modal-in .18s ease-out;
+}
+.modal-head { padding: 21px 21px 10px; }
+.modal-head h2 { margin: 0; font-size: 21px; }
+.modal-body { overflow-y: auto; padding: 8px 21px 18px; }
+.modal-actions { padding: 12px 16px 16px; display: flex; justify-content: flex-end; gap: 9px; border-top: 1px solid var(--line); }
+.modal-current { text-align: center; }
+.modal-current span { display: block; color: var(--muted); font-size: 13px; }
+.modal-current strong { display: block; color: var(--accent); font-size: 38px; }
+.modal-current small { color: var(--armor); font-weight: 700; }
+.choice-stack { display: grid; gap: 8px; margin-top: 18px; }
+
+.btn { min-height: 44px; padding: 10px 16px; border: 1px solid transparent; border-radius: 13px; cursor: pointer; color: #2d2005; background: var(--gold); font-weight: 750; }
+.btn:disabled { cursor: not-allowed; opacity: .4; }
+.btn-secondary { color: var(--text); background: transparent; border-color: rgba(255,255,255,.16); }
+.btn-danger { color: white; background: var(--danger); }
+.btn-full { width: 100%; }
+.choice-stack .btn.is-selected { border-color: var(--accent); color: white; background: color-mix(in srgb,var(--accent) 78%, #18121f); }
+.field { display: grid; gap: 6px; margin-top: 15px; }
+.field label { color: var(--muted); font-size: 13px; font-weight: 650; }
+.field input, .field textarea, .field select {
+  width: 100%;
+  min-height: 48px;
+  padding: 11px 13px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 13px;
+  color: var(--text);
+  background: rgba(11,9,17,.46);
+  font-size: 16px;
+}
+.field textarea { min-height: 104px; resize: vertical; }
+.preview-result { min-height: 52px; padding-top: 14px; text-align: center; color: var(--muted); }
+.preview-result strong { display: block; color: var(--accent); font-size: 21px; }
+
+.toast {
+  position: fixed;
+  z-index: 200;
+  left: 50%;
+  bottom: calc(91px + env(safe-area-inset-bottom));
+  max-width: calc(100% - 36px);
+  padding: 10px 14px;
+  transform: translate(-50%,16px);
+  border: 1px solid rgba(231,184,92,.25);
+  border-radius: 12px;
+  color: var(--text);
+  background: #2b2438;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  pointer-events: none;
+  transition: .2s ease;
+}
+.toast.is-visible { opacity: 1; transform: translate(-50%,0); }
+
+@keyframes fade-in { from { opacity: 0; } }
+@keyframes modal-in { from { opacity: 0; transform: translateY(12px) scale(.985); } }
+@media (max-width: 390px) {
+  #screen { padding-inline: 14px; }
+  .hero-card { grid-template-columns: 76px minmax(0,1fr); gap: 13px; padding: 15px; }
+  .avatar { width: 76px; border-radius: 18px; }
+  .hero-copy h1 { font-size: 20px; }
+  .attribute-grid { gap: 7px; }
+  .attribute-card { height: 78px; }
+  .skill-card { grid-template-columns: 38px minmax(0,1fr) auto; gap: 10px; padding: 13px; }
+  .skill-icon { width: 38px; height: 38px; }
+  .form-grid, .backup-actions { grid-template-columns: 1fr; }
+  .form-grid .span-2 { grid-column: auto; }
+  .segment { grid-template-columns: 1fr 1fr; }
+  .cost-grid { grid-template-columns: 1fr; }
+  .save-state { max-width: 112px; font-size: 11px; }
+  .install-note { grid-template-columns: 42px 1fr; }
+  .install-note .note-arrow { display: none; }
+}
+@media (min-width: 820px) {
+  body { padding: 18px 0; }
+  .app-shell { min-height: calc(100dvh - 36px); border: 1px solid var(--line); border-radius: 30px; overflow: hidden; box-shadow: 0 35px 90px rgba(0,0,0,.36); }
+  .bottom-nav { bottom: 18px; border-radius: 0 0 30px 30px; }
+}
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; } }
+
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-topbar">
+      <a class="brand" href="#" aria-label="Revenir à la fiche du personnage">
+        <span class="brand-mark" aria-hidden="true">C</span>
+        <span><strong>Compagnon JDR</strong><small>Fiche joueur</small></span>
+      </a>
+      <span class="save-state" id="save-state" aria-live="polite">Enregistré automatiquement</span>
+    </header>
+
+    <main id="screen" tabindex="-1"></main>
+
+    <nav class="bottom-nav" aria-label="Navigation principale">
+      <button class="nav-item is-active" type="button" data-view="character" aria-current="page">
+        <span class="nav-icon" aria-hidden="true">♙</span>
+        <span>Personnage</span>
+      </button>
+      <button class="nav-item" type="button" data-view="settings">
+        <span class="nav-icon" aria-hidden="true">⚙</span>
+        <span>Paramètres</span>
+      </button>
+    </nav>
+  </div>
+
+  <div id="modal-root"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+(() => {
+  "use strict";
+
+  const STORAGE_KEY = "compagnon-jdr-web-v1";
+  const typeInfo = {
+    DAMAGE: { label: "Dégâts", noun: "DÉGÂTS", color: "var(--health)", icon: "⚔" },
+    HEALING: { label: "Soins", noun: "SOINS", color: "var(--stamina)", icon: "✚" },
+    ARMOR: { label: "Armure", noun: "ARMURE", color: "var(--armor)", icon: "⬟" },
+    RANDOM: { label: "Aléatoire", noun: "ALÉATOIRE", color: "var(--random)", icon: "◆" }
+  };
+  const attributes = [
+    ["strength","FOR","Force"], ["dexterity","DEX","Dextérité"],
+    ["vitality","VIT","Vitalité"], ["endurance","ENDU","Endurance"],
+    ["intelligence","INT","Intelligence"], ["wisdom","SAG","Sagesse"],
+    ["charisma","CHAR","Charisme"]
+  ];
+  const statInfo = {
+    health: { title: "Points de vie", loss: "Dégâts reçus", gain: "Soins reçus", color: "var(--health)", glyph: "♥" },
+    mana: { title: "Mana", loss: "Mana utilisé", gain: "Mana reçu", color: "var(--mana)", glyph: "ϟ" },
+    stamina: { title: "Endurance", loss: "Endurance utilisée", gain: "Endurance récupérée", color: "var(--stamina)", glyph: "●" }
+  };
+
+  const defaults = () => ({
+    version: 1,
+    firstName: "Aelys", lastName: "Valombre", race: "", gender: "", age: "", height: "", avatarDataUrl: null,
+    health: 100, maxHealth: 100, mana: 100, maxMana: 100, stamina: 100, maxStamina: 100, temporaryArmor: 0,
+    attributes: { strength: 0, dexterity: 0, vitality: 0, endurance: 0, intelligence: 0, wisdom: 0, charisma: 0 },
+    skills: [
+      { id: "skill-1", name: "Frappe runique", type: "DAMAGE", minimumAmount: 12, maximumAmount: 18, description: "Une attaque chargée d'énergie ancienne.", healthCost: 0, manaCost: 0, staminaCost: 8 },
+      { id: "skill-2", name: "Lueur réparatrice", type: "HEALING", minimumAmount: 12, maximumAmount: 12, description: "Restaure doucement les forces d'un allié.", healthCost: 0, manaCost: 10, staminaCost: 0 }
+    ],
+    talents: []
+  });
+
+  let state = loadState();
+  let view = "character";
+  let toastTimer;
+
+  const screen = document.querySelector("#screen");
+  const modalRoot = document.querySelector("#modal-root");
+  const saveState = document.querySelector("#save-state");
+
+  function loadState() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      return normalize(saved || defaults());
+    } catch (_) {
+      return defaults();
+    }
+  }
+
+  function normalize(raw) {
+    const base = defaults();
+    const merged = { ...base, ...raw, attributes: { ...base.attributes, ...(raw?.attributes || {}) } };
+    merged.skills = Array.isArray(raw?.skills) ? raw.skills : base.skills;
+    merged.talents = Array.isArray(raw?.talents) ? raw.talents : base.talents;
+    merged.maxHealth = clampInt(merged.maxHealth, 1, 9999);
+    merged.maxMana = clampInt(merged.maxMana, 1, 9999);
+    merged.maxStamina = clampInt(merged.maxStamina, 1, 9999);
+    merged.health = clampInt(merged.health, 0, totalMax("health", merged));
+    merged.mana = clampInt(merged.mana, 0, totalMax("mana", merged));
+    merged.stamina = clampInt(merged.stamina, 0, totalMax("stamina", merged));
+    merged.temporaryArmor = clampInt(merged.temporaryArmor, 0, 9999);
+    attributes.forEach(([key]) => merged.attributes[key] = clampInt(merged.attributes[key], 0, 99));
+    return merged;
+  }
+
+  function clampInt(value, min, max) {
+    const parsed = Number.parseInt(value, 10);
+    return Math.min(max, Math.max(min, Number.isFinite(parsed) ? parsed : min));
+  }
+
+  function totalMax(kind, source = state) {
+    if (kind === "health") return source.maxHealth + source.attributes.vitality;
+    if (kind === "mana") return source.maxMana + source.attributes.intelligence;
+    return source.maxStamina + source.attributes.endurance;
+  }
+
+  function persist(message = "Enregistré automatiquement") {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    saveState.textContent = message;
+    saveState.classList.add("is-saving");
+    window.setTimeout(() => {
+      saveState.textContent = "Enregistré automatiquement";
+      saveState.classList.remove("is-saving");
+    }, 700);
+  }
+
+  function escapeHtml(value) {
+    return String(value ?? "").replace(/[&<>'"]/g, char => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", "'":"&#39;", '"':"&quot;" })[char]);
+  }
+
+  function initials() {
+    const value = [state.firstName, state.lastName].map(x => x?.trim()?.[0]?.toUpperCase()).filter(Boolean).join("");
+    return value || "?";
+  }
+
+  function render() {
+    screen.innerHTML = view === "character" ? characterMarkup() : settingsMarkup();
+    document.querySelectorAll("[data-view]").forEach(button => {
+      const active = button.dataset.view === view;
+      button.classList.toggle("is-active", active);
+      active ? button.setAttribute("aria-current", "page") : button.removeAttribute("aria-current");
+    });
+  }
+
+  function characterMarkup() {
+    const name = [state.firstName, state.lastName].filter(Boolean).join(" ") || "Sans nom";
+    const avatar = state.avatarDataUrl
+      ? `<img src="${state.avatarDataUrl}" alt="Avatar de ${escapeHtml(name)}">`
+      : escapeHtml(initials());
+    return `<div class="screen-stack">
+      ${shouldShowInstallCard() ? installCardMarkup() : ""}
+      <section class="card hero-card" aria-label="Identité du personnage">
+        <div class="avatar">${avatar}</div>
+        <div class="hero-copy">
+          <h1>${escapeHtml(name)}</h1>
+          <p>Race : ${escapeHtml(state.race || "—")} &nbsp;•&nbsp; Sexe : ${escapeHtml(state.gender || "—")}</p>
+          <p>Âge : ${escapeHtml(state.age || "—")} &nbsp;•&nbsp; Taille : ${escapeHtml(state.height || "—")}</p>
+        </div>
+      </section>
+
+      <h2 class="section-heading">ÉTAT DU PERSONNAGE</h2>
+      <section class="stat-list">${["health","mana","stamina"].map(statMarkup).join("")}</section>
+
+      <h2 class="section-heading">STATS</h2>
+      <section class="attribute-grid" aria-label="Caractéristiques">${attributes.map(attributeMarkup).join("")}</section>
+
+      <h2 class="section-heading">COMPÉTENCES</h2>
+      <section class="skill-list">${state.skills.length ? state.skills.map(skillMarkup).join("") : emptyMarkup("Aucune compétence","Ajoutez-en depuis les paramètres.")}</section>
+
+      <h2 class="section-heading">TALENTS</h2>
+      <section class="talent-list">${state.talents.length ? state.talents.map(talentMarkup).join("") : emptyMarkup("Aucun talent","Ajoutez-en depuis les paramètres.")}</section>
+    </div>`;
+  }
+
+  function shouldShowInstallCard() {
+    const standalone = window.matchMedia?.("(display-mode: standalone)").matches || window.navigator.standalone === true;
+    return !standalone && localStorage.getItem("compagnon-jdr-install-help-seen") !== "yes";
+  }
+
+  function installCardMarkup() {
+    return `<section class="card onboarding-card" aria-label="Installer l’application sur iPhone">
+      <div class="onboarding-head"><span class="note-icon" aria-hidden="true">⇧</span><div><strong>Installer l’application</strong><span>À faire une seule fois sur l’iPhone</span></div></div>
+      <ol class="install-steps"><li>Ouvrez cette page dans Safari.</li><li>Touchez le bouton Partager en bas de l’écran.</li><li>Choisissez « Sur l’écran d’accueil ».</li></ol>
+      <div class="onboarding-actions"><button class="btn btn-compact" type="button" data-install-understood>J’ai compris</button></div>
+    </section>`;
+  }
+
+  function statMarkup(kind) {
+    const info = statInfo[kind];
+    const value = state[kind];
+    const maximum = totalMax(kind);
+    const armor = kind === "health" ? state.temporaryArmor : 0;
+    const visualMax = Math.max(maximum, value + armor, 1);
+    const progress = (value / visualMax * 100).toFixed(2) + "%";
+    const armorProgress = (armor / visualMax * 100).toFixed(2) + "%";
+    return `<button type="button" class="card stat-card" data-stat="${kind}" style="--accent:${info.color};--progress:${progress};--armor-progress:${armorProgress}" aria-label="Modifier ${info.title}">
+      <span class="stat-row">
+        <span class="stat-glyph">${info.glyph}</span>
+        <span class="stat-name">${info.title}</span>
+        ${armor ? `<span class="stat-armor">(+${armor} armure)</span>` : ""}
+        <span class="stat-value"><strong>${value}</strong> / ${maximum}</span>
+      </span>
+      <span class="progress" aria-hidden="true"><span class="progress-value"></span><span class="progress-armor"></span></span>
+    </button>`;
+  }
+
+  function attributeMarkup([key, abbreviation, fullName]) {
+    return `<button type="button" class="card attribute-card" data-attribute="${key}" aria-label="Modifier ${fullName}, valeur ${state.attributes[key]}">
+      <span>${abbreviation}</span><strong>${String(state.attributes[key]).padStart(2,"0")}</strong>
+    </button>`;
+  }
+
+  function amountLabel(skill) {
+    return skill.minimumAmount === skill.maximumAmount ? String(skill.minimumAmount) : `${skill.minimumAmount}–${skill.maximumAmount}`;
+  }
+
+  function costLabel(skill) {
+    const costs = [];
+    if (skill.healthCost) costs.push(`${skill.healthCost} PV`);
+    if (skill.manaCost) costs.push(`${skill.manaCost} mana`);
+    if (skill.staminaCost) costs.push(`${skill.staminaCost} endurance`);
+    return costs.length ? costs.join(" · ") : "aucun";
+  }
+
+  function skillMarkup(skill) {
+    const info = typeInfo[skill.type] || typeInfo.DAMAGE;
+    return `<button type="button" class="card skill-card" data-use-skill="${escapeHtml(skill.id)}" style="--accent:${info.color}">
+      <span class="skill-icon" aria-hidden="true">${info.icon}</span>
+      <span class="skill-main"><strong>${escapeHtml(skill.name)}</strong>${skill.description ? `<p>${escapeHtml(skill.description)}</p>` : ""}<p class="skill-cost">Coût : ${costLabel(skill)}</p></span>
+      <span class="skill-amount"><strong>${amountLabel(skill)}</strong><span>${info.noun}</span></span>
+    </button>`;
+  }
+
+  function talentMarkup(talent) {
+    return `<article class="card talent-card"><strong>${escapeHtml(talent.name)}</strong>${talent.description ? `<p>${escapeHtml(talent.description)}</p>` : ""}</article>`;
+  }
+
+  function emptyMarkup(title, message) {
+    return `<div class="card empty-state"><strong>${title}</strong><span>${message}</span></div>`;
+  }
+
+  function settingsMarkup() {
+    const name = [state.firstName,state.lastName].filter(Boolean).join(" ") || "Sans nom";
+    const avatar = state.avatarDataUrl ? `<img src="${state.avatarDataUrl}" alt="Avatar de ${escapeHtml(name)}">` : escapeHtml(initials());
+    return `<div class="screen-stack">
+      <h1 class="page-title">Paramètres</h1><p class="page-subtitle">Personnalisez votre fiche de personnage.</p>
+      <button class="card install-note" type="button" data-install-guide><span class="note-icon" aria-hidden="true">⇧</span><span><strong>Installer sur iPhone</strong><p>Afficher les instructions simples.</p></span><span class="note-arrow" aria-hidden="true">›</span></button>
+
+      <h2 class="section-heading">IDENTITÉ</h2>
+      <section class="card settings-card">
+        <div class="avatar-editor"><div class="avatar">${avatar}</div><div class="avatar-editor-copy"><strong>Avatar</strong><span>Image carrée recommandée</span><button class="btn btn-secondary btn-compact" type="button" data-avatar-pick>Choisir une image</button><input id="avatar-input" type="file" accept="image/*" hidden></div></div>
+        <div class="form-grid">
+          ${identityField("firstName","Prénom",state.firstName,30)}${identityField("lastName","Nom",state.lastName,30)}
+          ${identityField("race","Race",state.race,30)}${identityField("gender","Sexe",state.gender,20)}
+          ${identityField("age","Âge",state.age,12,"Ex. 27 ans")}${identityField("height","Taille",state.height,12,"Ex. 1,75 m")}
+        </div>
+      </section>
+
+      <h2 class="section-heading">VALEURS MAXIMALES</h2>
+      <section class="card settings-card maximum-grid">
+        ${maximumField("maxHealth","PV de base (+ VIT)",state.maxHealth,"var(--health)")}
+        ${maximumField("maxMana","Mana de base (+ INT)",state.maxMana,"var(--mana)")}
+        ${maximumField("maxStamina","Endurance de base (+ ENDU)",state.maxStamina,"var(--stamina)")}
+      </section>
+
+      <div class="settings-section-head"><h2 class="section-heading">COMPÉTENCES</h2><button class="btn btn-compact" type="button" data-add-skill>＋ Ajouter</button></div>
+      <section class="editable-list">${state.skills.length ? state.skills.map(editableSkillMarkup).join("") : emptyMarkup("Aucune compétence","Touchez Ajouter pour en créer une.")}</section>
+
+      <div class="settings-section-head"><h2 class="section-heading">TALENTS</h2><button class="btn btn-compact" type="button" data-add-talent>＋ Ajouter</button></div>
+      <section class="editable-list">${state.talents.length ? state.talents.map(editableTalentMarkup).join("") : emptyMarkup("Aucun talent","Touchez Ajouter pour en créer un.")}</section>
+
+      <h2 class="section-heading">SAUVEGARDE</h2>
+      <section class="card settings-card"><div class="backup-actions"><button class="btn" type="button" data-export>Créer une sauvegarde</button><button class="btn btn-secondary" type="button" data-import-pick>Restaurer une sauvegarde</button><input id="backup-input" type="file" accept="application/json,.json" hidden></div><p class="backup-help">Conservez le fichier créé dans un endroit sûr. Il permettra de retrouver la fiche en cas de problème.</p></section>
+    </div>`;
+  }
+
+  function identityField(key,label,value,maxLength,placeholder="") {
+    return `<div class="field"><label for="identity-${key}">${label}</label><input id="identity-${key}" data-identity="${key}" value="${escapeHtml(value)}" maxlength="${maxLength}" ${placeholder ? `placeholder="${escapeHtml(placeholder)}"` : ""}></div>`;
+  }
+
+  function maximumField(key,label,value,color) {
+    return `<div class="maximum-field" style="--accent:${color}"><span class="maximum-dot" aria-hidden="true"></span><div class="field"><label for="maximum-${key}">${label}</label><input id="maximum-${key}" data-maximum="${key}" type="number" inputmode="numeric" min="1" max="9999" value="${value}"></div></div>`;
+  }
+
+  function editableSkillMarkup(skill) {
+    const info = typeInfo[skill.type] || typeInfo.DAMAGE;
+    return `<article class="card editable-row" style="--accent:${info.color}"><div class="editable-copy"><strong>${escapeHtml(skill.name)}</strong><span class="accent">${amountLabel(skill)} ${info.label.toLowerCase()}</span><span>Coût : ${costLabel(skill)}</span></div><div class="row-actions"><button class="icon-btn" type="button" data-edit-skill="${escapeHtml(skill.id)}" aria-label="Modifier ${escapeHtml(skill.name)}">✎</button><button class="icon-btn danger" type="button" data-delete-skill="${escapeHtml(skill.id)}" aria-label="Supprimer ${escapeHtml(skill.name)}">⌫</button></div></article>`;
+  }
+
+  function editableTalentMarkup(talent) {
+    return `<article class="card editable-row"><div class="editable-copy"><strong>${escapeHtml(talent.name)}</strong>${talent.description ? `<span>${escapeHtml(talent.description)}</span>` : ""}</div><div class="row-actions"><button class="icon-btn" type="button" data-edit-talent="${escapeHtml(talent.id)}" aria-label="Modifier ${escapeHtml(talent.name)}">✎</button><button class="icon-btn danger" type="button" data-delete-talent="${escapeHtml(talent.id)}" aria-label="Supprimer ${escapeHtml(talent.name)}">⌫</button></div></article>`;
+  }
+
+  function openModal({ title, body, confirmLabel = "Enregistrer", cancelLabel = "Annuler", confirmClass = "", onConfirm, disableConfirm = false }) {
+    modalRoot.innerHTML = `<div class="modal-backdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <header class="modal-head"><h2 id="modal-title">${escapeHtml(title)}</h2></header>
+      <div class="modal-body">${body}</div>
+      <footer class="modal-actions"><button class="btn btn-secondary" type="button" data-modal-cancel>${escapeHtml(cancelLabel)}</button><button class="btn ${confirmClass}" type="button" data-modal-confirm ${disableConfirm ? "disabled" : ""}>${escapeHtml(confirmLabel)}</button></footer>
+    </section></div>`;
+    const modal = modalRoot.querySelector(".modal");
+    modalRoot.querySelector("[data-modal-cancel]").addEventListener("click", closeModal);
+    modalRoot.querySelector("[data-modal-confirm]").addEventListener("click", () => onConfirm?.(modal));
+    window.setTimeout(() => modal.querySelector("input,button")?.focus(), 20);
+    return modal;
+  }
+
+  function closeModal() { modalRoot.innerHTML = ""; }
+
+  function openStatDialog(kind) {
+    const info = statInfo[kind];
+    const maximum = totalMax(kind);
+    let operation = null;
+    const modal = openModal({
+      title: info.title,
+      confirmLabel: "Appliquer",
+      disableConfirm: true,
+      body: `<div class="modal-current" style="--accent:${info.color}"><span>Valeur actuelle</span><strong>${state[kind]} / ${maximum}</strong>${kind === "health" && state.temporaryArmor ? `<small>+${state.temporaryArmor} armure</small>` : ""}</div>
+        <div class="choice-stack" style="--accent:${info.color}">
+          <button class="btn btn-secondary" type="button" data-operation="loss">${info.loss}</button>
+          <button class="btn btn-secondary" type="button" data-operation="gain">${info.gain}</button>
+          ${kind === "health" ? `<button class="btn btn-secondary" type="button" data-operation="armor">Armure reçue</button>` : ""}
+        </div>
+        <div class="field" data-amount-wrap hidden><label for="stat-amount">Montant</label><input id="stat-amount" type="number" min="1" max="9999" inputmode="numeric"></div>
+        <div class="preview-result" data-preview></div>`,
+      onConfirm: () => {
+        const amount = clampInt(modal.querySelector("#stat-amount").value, 1, 9999);
+        if (operation === "armor") state.temporaryArmor = clampInt(state.temporaryArmor + amount, 0, 9999);
+        if (operation === "gain") state[kind] = Math.min(maximum, state[kind] + amount);
+        if (operation === "loss") {
+          if (kind === "health") {
+            const absorbed = Math.min(state.temporaryArmor, amount);
+            state.temporaryArmor -= absorbed;
+            state.health = Math.max(0, state.health - (amount - absorbed));
+          } else state[kind] = Math.max(0, state[kind] - amount);
+        }
+        persist(); closeModal(); render();
+      }
+    });
+    const amountWrap = modal.querySelector("[data-amount-wrap]");
+    const amountInput = modal.querySelector("#stat-amount");
+    const preview = modal.querySelector("[data-preview]");
+    const confirm = modalRoot.querySelector("[data-modal-confirm]");
+    modal.querySelectorAll("[data-operation]").forEach(button => button.addEventListener("click", () => {
+      operation = button.dataset.operation;
+      modal.querySelectorAll("[data-operation]").forEach(item => item.classList.toggle("is-selected", item === button));
+      amountWrap.hidden = false; amountInput.value = ""; confirm.disabled = true; preview.innerHTML = ""; amountInput.focus();
+    }));
+    amountInput.addEventListener("input", () => {
+      const amount = Number.parseInt(amountInput.value,10) || 0;
+      confirm.disabled = !operation || amount <= 0;
+      if (!amount) { preview.innerHTML = ""; return; }
+      let result = state[kind]; let detail = "";
+      if (operation === "gain") result = Math.min(maximum, result + amount);
+      if (operation === "loss") {
+        const absorbed = kind === "health" ? Math.min(state.temporaryArmor, amount) : 0;
+        result = Math.max(0, result - (amount - absorbed));
+        if (absorbed) detail = `${absorbed} absorbés · `;
+      }
+      preview.innerHTML = operation === "armor" ? `<strong>+${amount} armure</strong>Armure totale : ${state.temporaryArmor + amount}` : `<strong>${detail}${result} / ${maximum}</strong>Résultat après application`;
+    });
+  }
+
+  function openAttributeDialog(key) {
+    const [,abbr,label] = attributes.find(item => item[0] === key);
+    const oldMax = { health: totalMax("health"), mana: totalMax("mana"), stamina: totalMax("stamina") };
+    const oldFull = { health: state.health >= oldMax.health, mana: state.mana >= oldMax.mana, stamina: state.stamina >= oldMax.stamina };
+    const modal = openModal({
+      title: `${abbr} · ${label}`,
+      body: `<div class="field"><label for="attribute-value">Valeur (0 à 99)</label><input id="attribute-value" type="number" min="0" max="99" inputmode="numeric" value="${state.attributes[key]}"></div>`,
+      onConfirm: () => {
+        state.attributes[key] = clampInt(modal.querySelector("#attribute-value").value,0,99);
+        if (key === "vitality") state.health = oldFull.health ? totalMax("health") : Math.min(state.health,totalMax("health"));
+        if (key === "intelligence") state.mana = oldFull.mana ? totalMax("mana") : Math.min(state.mana,totalMax("mana"));
+        if (key === "endurance") state.stamina = oldFull.stamina ? totalMax("stamina") : Math.min(state.stamina,totalMax("stamina"));
+        persist(); closeModal(); render();
+      }
+    });
+    modal.querySelector("#attribute-value").select();
+  }
+
+  function openSkillUse(id) {
+    const skill = state.skills.find(item => String(item.id) === String(id));
+    if (!skill) return;
+    const canUse = state.health >= skill.healthCost && state.mana >= skill.manaCost && state.stamina >= skill.staminaCost;
+    const modal = openModal({
+      title: "Utiliser cette compétence ?",
+      confirmLabel: "Oui",
+      cancelLabel: "Non",
+      disableConfirm: !canUse,
+      body: `<p><strong>${escapeHtml(skill.name)}</strong></p><p style="color:var(--gold-muted);font-weight:700">Coût : ${costLabel(skill)}</p>${canUse ? "" : `<p style="color:var(--danger)">Les ressources sont insuffisantes.</p>`}`,
+      onConfirm: () => {
+        state.health = Math.max(0,state.health - skill.healthCost);
+        state.mana = Math.max(0,state.mana - skill.manaCost);
+        state.stamina = Math.max(0,state.stamina - skill.staminaCost);
+        const rolled = randomAmount(skill);
+        if (skill.type === "ARMOR") state.temporaryArmor = Math.min(9999,state.temporaryArmor + rolled);
+        persist(); closeModal(); render(); toast(`${skill.name} utilisée${skill.minimumAmount !== skill.maximumAmount ? ` · résultat ${rolled}` : ""}`);
+      }
+    });
+  }
+
+  function openInstallGuide() {
+    openModal({
+      title: "Installer sur l’iPhone",
+      confirmLabel: "J’ai compris",
+      cancelLabel: "Plus tard",
+      body: `<ol class="install-steps"><li>Vérifiez que la page est ouverte dans Safari.</li><li>Touchez le bouton Partager : le carré avec une flèche vers le haut.</li><li>Faites défiler le menu et touchez « Sur l’écran d’accueil ».</li><li>Touchez « Ajouter ». L’icône Compagnon JDR apparaîtra avec les autres applications.</li></ol><p class="install-dialog-note">La fiche s’enregistre automatiquement sur cet iPhone.</p>`,
+      onConfirm: () => { localStorage.setItem("compagnon-jdr-install-help-seen","yes"); closeModal(); render(); toast("Les instructions restent accessibles dans Paramètres"); }
+    });
+  }
+
+  function openSkillEditor(existing = null) {
+    const skill = existing ? { ...existing } : { id: `skill-${Date.now()}`, name:"", type:"DAMAGE", minimumAmount:1, maximumAmount:1, description:"", healthCost:0, manaCost:0, staminaCost:0 };
+    let selectedType = skill.type;
+    let useRange = Number(skill.minimumAmount) !== Number(skill.maximumAmount);
+    const modal = openModal({
+      title: existing ? "Modifier la compétence" : "Nouvelle compétence",
+      body: `<div class="field"><label for="skill-name">Nom</label><input id="skill-name" maxlength="50" value="${escapeHtml(skill.name)}"></div>
+        <div class="field"><label>Type infligé</label><div class="segment" data-type-segment>${Object.entries(typeInfo).map(([key,info]) => `<button type="button" data-skill-type="${key}" style="--segment-color:${info.color}" class="${key === selectedType ? "is-selected" : ""}">${info.label}</button>`).join("")}</div></div>
+        <div class="field"><label>Valeur</label><div class="segment range-segment"><button type="button" data-range="fixed" class="${!useRange ? "is-selected" : ""}">Valeur fixe</button><button type="button" data-range="range" class="${useRange ? "is-selected" : ""}">Fourchette</button></div></div>
+        <div class="amount-grid"><div class="field"><label for="skill-minimum" data-min-label>${useRange ? "Minimum" : "Valeur"}</label><input id="skill-minimum" type="number" inputmode="numeric" min="1" max="9999" value="${skill.minimumAmount}"></div><div class="field ${useRange ? "" : "hidden"}" data-maximum-field><label for="skill-maximum">Maximum</label><input id="skill-maximum" type="number" inputmode="numeric" min="1" max="9999" value="${skill.maximumAmount}"></div></div>
+        <div class="field"><label>Coût de la compétence</label><div class="cost-grid"><div><span class="field-hint">PV</span><input id="skill-health-cost" type="number" inputmode="numeric" min="0" max="9999" value="${skill.healthCost || 0}"></div><div><span class="field-hint">Mana</span><input id="skill-mana-cost" type="number" inputmode="numeric" min="0" max="9999" value="${skill.manaCost || 0}"></div><div><span class="field-hint">Endurance</span><input id="skill-stamina-cost" type="number" inputmode="numeric" min="0" max="9999" value="${skill.staminaCost || 0}"></div></div></div>
+        <div class="field textarea-wrap"><label for="skill-description">Description (facultative)</label><textarea id="skill-description" maxlength="180" rows="4">${escapeHtml(skill.description)}</textarea><button class="textarea-done" type="button" data-finish-description aria-label="Terminer la description">✓</button><span class="field-hint"><span data-description-count>${String(skill.description).length}</span>/180</span></div>
+        <p class="form-error" data-form-error></p>`,
+      onConfirm: () => {
+        const name = modal.querySelector("#skill-name").value.trim();
+        const min = Number.parseInt(modal.querySelector("#skill-minimum").value,10);
+        const max = useRange ? Number.parseInt(modal.querySelector("#skill-maximum").value,10) : min;
+        const error = modal.querySelector("[data-form-error]");
+        if (!name) { error.textContent = "Le nom est obligatoire."; return; }
+        if (!Number.isInteger(min) || min < 1 || min > 9999 || !Number.isInteger(max) || max < min || max > 9999) { error.textContent = "Vérifiez les valeurs minimale et maximale."; return; }
+        const updated = { id:skill.id, name, type:selectedType, minimumAmount:min, maximumAmount:max, description:modal.querySelector("#skill-description").value.trim(), healthCost:clampInt(modal.querySelector("#skill-health-cost").value,0,9999), manaCost:clampInt(modal.querySelector("#skill-mana-cost").value,0,9999), staminaCost:clampInt(modal.querySelector("#skill-stamina-cost").value,0,9999) };
+        if (existing) state.skills = state.skills.map(item => String(item.id) === String(existing.id) ? updated : item);
+        else state.skills.push(updated);
+        persist(); closeModal(); render(); toast(existing ? "Compétence modifiée" : "Compétence ajoutée");
+      }
+    });
+    modal.querySelectorAll("[data-skill-type]").forEach(button => button.addEventListener("click", () => {
+      selectedType = button.dataset.skillType;
+      modal.querySelectorAll("[data-skill-type]").forEach(item => item.classList.toggle("is-selected", item === button));
+    }));
+    modal.querySelectorAll("[data-range]").forEach(button => button.addEventListener("click", () => {
+      useRange = button.dataset.range === "range";
+      modal.querySelectorAll("[data-range]").forEach(item => item.classList.toggle("is-selected", item === button));
+      modal.querySelector("[data-maximum-field]").classList.toggle("hidden", !useRange);
+      modal.querySelector("[data-min-label]").textContent = useRange ? "Minimum" : "Valeur";
+    }));
+    const description = modal.querySelector("#skill-description");
+    description.addEventListener("input", () => modal.querySelector("[data-description-count]").textContent = description.value.length);
+    modal.querySelector("[data-finish-description]").addEventListener("click", () => { description.blur(); modalRoot.querySelector("[data-modal-confirm]").focus(); });
+  }
+
+  function openTalentEditor(existing = null) {
+    const talent = existing ? { ...existing } : { id:`talent-${Date.now()}`, name:"", description:"" };
+    const modal = openModal({
+      title: existing ? "Modifier le talent" : "Nouveau talent",
+      body: `<div class="field"><label for="talent-name">Titre</label><input id="talent-name" maxlength="60" value="${escapeHtml(talent.name)}"></div><div class="field"><label for="talent-description">Description</label><textarea id="talent-description" maxlength="240" rows="5">${escapeHtml(talent.description)}</textarea><span class="field-hint">240 caractères maximum</span></div><p class="form-error" data-form-error></p>`,
+      onConfirm: () => {
+        const name = modal.querySelector("#talent-name").value.trim();
+        if (!name) { modal.querySelector("[data-form-error]").textContent = "Le titre est obligatoire."; return; }
+        const updated = { id:talent.id, name, description:modal.querySelector("#talent-description").value.trim() };
+        if (existing) state.talents = state.talents.map(item => String(item.id) === String(existing.id) ? updated : item);
+        else state.talents.push(updated);
+        persist(); closeModal(); render(); toast(existing ? "Talent modifié" : "Talent ajouté");
+      }
+    });
+  }
+
+  function confirmDelete(kind,item) {
+    openModal({
+      title: `Supprimer ${kind === "skill" ? "la compétence" : "le talent"} ?`,
+      confirmLabel: "Supprimer", confirmClass: "btn-danger",
+      body: `<p>« ${escapeHtml(item.name)} » sera retiré${kind === "skill" ? "e" : ""} de votre fiche.</p>`,
+      onConfirm: () => {
+        if (kind === "skill") state.skills = state.skills.filter(current => String(current.id) !== String(item.id));
+        else state.talents = state.talents.filter(current => String(current.id) !== String(item.id));
+        persist(); closeModal(); render();
+      }
+    });
+  }
+
+  function setMaximum(key,value) {
+    const resource = key === "maxHealth" ? "health" : key === "maxMana" ? "mana" : "stamina";
+    const wasFull = state[resource] >= totalMax(resource);
+    state[key] = clampInt(value,1,9999);
+    state[resource] = wasFull ? totalMax(resource) : Math.min(state[resource],totalMax(resource));
+    persist(); render();
+  }
+
+  function exportBackup() {
+    const payload = { format:"compagnon-jdr-web", version:1, exportedAt:new Date().toISOString(), character:state };
+    const blob = new Blob([JSON.stringify(payload,null,2)],{ type:"application/json" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    const safeName = ([state.firstName,state.lastName].filter(Boolean).join("-") || "personnage").replace(/[^a-z0-9_-]+/gi,"-");
+    link.href = url; link.download = `Compagnon-JDR-${safeName}.json`; link.click();
+    window.setTimeout(() => URL.revokeObjectURL(url),1000);
+    toast("Sauvegarde exportée");
+  }
+
+  function importBackup(file) {
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const parsed = JSON.parse(reader.result);
+        const candidate = parsed.character || parsed;
+        if (!candidate || typeof candidate !== "object" || !Array.isArray(candidate.skills) || !candidate.attributes) throw new Error("format");
+        openModal({ title:"Importer cette fiche ?", confirmLabel:"Importer", body:`<p>La fiche actuelle sera remplacée par « ${escapeHtml([candidate.firstName,candidate.lastName].filter(Boolean).join(" ") || "Sans nom")} ».</p>`, onConfirm:() => { state = normalize(candidate); persist(); closeModal(); render(); toast("Fiche importée"); } });
+      } catch (_) { toast("Ce fichier de sauvegarde n’est pas valide"); }
+    };
+    reader.readAsText(file);
+  }
+
+  function importAvatar(file) {
+    if (!file || !file.type.startsWith("image/")) return;
+    if (file.size > 12 * 1024 * 1024) { toast("L’image est trop volumineuse"); return; }
+    const image = new Image();
+    const url = URL.createObjectURL(file);
+    image.onload = () => {
+      const size = Math.min(512,Math.max(1,Math.min(image.naturalWidth,image.naturalHeight)));
+      const canvas = document.createElement("canvas"); canvas.width = size; canvas.height = size;
+      const ctx = canvas.getContext("2d");
+      ctx.fillStyle = "#2d2440"; ctx.fillRect(0,0,size,size);
+      const sourceSize = Math.min(image.naturalWidth,image.naturalHeight);
+      const sx = (image.naturalWidth-sourceSize)/2, sy = (image.naturalHeight-sourceSize)/2;
+      ctx.drawImage(image,sx,sy,sourceSize,sourceSize,0,0,size,size);
+      state.avatarDataUrl = canvas.toDataURL("image/jpeg",.86);
+      URL.revokeObjectURL(url); persist(); render(); toast("Avatar mis à jour");
+    };
+    image.onerror = () => { URL.revokeObjectURL(url); toast("Impossible de lire cette image"); };
+    image.src = url;
+  }
+
+  function randomAmount(skill) {
+    const min = Number(skill.minimumAmount) || 0;
+    const max = Math.max(min,Number(skill.maximumAmount) || min);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function toast(message) {
+    const node = document.querySelector("#toast");
+    node.textContent = message;
+    node.classList.add("is-visible");
+    window.clearTimeout(toastTimer);
+    toastTimer = window.setTimeout(() => node.classList.remove("is-visible"),2200);
+  }
+
+  document.addEventListener("click", event => {
+    const brand = event.target.closest(".brand");
+    if (brand) { event.preventDefault(); view = "character"; render(); window.scrollTo({top:0,behavior:"smooth"}); return; }
+    const viewButton = event.target.closest("[data-view]");
+    if (viewButton) { view = viewButton.dataset.view; render(); screen.focus({ preventScroll: true }); window.scrollTo({ top: 0, behavior: "smooth" }); return; }
+    const statButton = event.target.closest("[data-stat]");
+    if (statButton) return openStatDialog(statButton.dataset.stat);
+    const attributeButton = event.target.closest("[data-attribute]");
+    if (attributeButton) return openAttributeDialog(attributeButton.dataset.attribute);
+    const skillButton = event.target.closest("[data-use-skill]");
+    if (skillButton) return openSkillUse(skillButton.dataset.useSkill);
+    if (event.target.closest("[data-install-guide]")) return openInstallGuide();
+    if (event.target.closest("[data-install-understood]")) { localStorage.setItem("compagnon-jdr-install-help-seen","yes"); render(); toast("Instructions masquées"); return; }
+    if (event.target.closest("[data-avatar-pick]")) return document.querySelector("#avatar-input")?.click();
+    if (event.target.closest("[data-add-skill]")) return openSkillEditor();
+    const editSkill = event.target.closest("[data-edit-skill]");
+    if (editSkill) return openSkillEditor(state.skills.find(item => String(item.id) === String(editSkill.dataset.editSkill)));
+    const deleteSkill = event.target.closest("[data-delete-skill]");
+    if (deleteSkill) { const item = state.skills.find(item => String(item.id) === String(deleteSkill.dataset.deleteSkill)); if (item) confirmDelete("skill",item); return; }
+    if (event.target.closest("[data-add-talent]")) return openTalentEditor();
+    const editTalent = event.target.closest("[data-edit-talent]");
+    if (editTalent) return openTalentEditor(state.talents.find(item => String(item.id) === String(editTalent.dataset.editTalent)));
+    const deleteTalent = event.target.closest("[data-delete-talent]");
+    if (deleteTalent) { const item = state.talents.find(item => String(item.id) === String(deleteTalent.dataset.deleteTalent)); if (item) confirmDelete("talent",item); return; }
+    if (event.target.closest("[data-export]")) return exportBackup();
+    if (event.target.closest("[data-import-pick]")) return document.querySelector("#backup-input")?.click();
+  });
+
+  document.addEventListener("input", event => {
+    const field = event.target.closest("[data-identity]");
+    if (!field) return;
+    state[field.dataset.identity] = field.value;
+    persist("Enregistrement…");
+  });
+
+  document.addEventListener("change", event => {
+    const maximum = event.target.closest("[data-maximum]");
+    if (maximum) return setMaximum(maximum.dataset.maximum,maximum.value);
+    if (event.target.id === "avatar-input") return importAvatar(event.target.files?.[0]);
+    if (event.target.id === "backup-input") return importBackup(event.target.files?.[0]);
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && modalRoot.children.length) event.preventDefault();
+  });
+
+  function registerWebMcp() {
+    const context = document.modelContext;
+    if (!context?.registerTool) return;
+    const readTool = {
+      name: "read_character_sheet", title: "Lire la fiche du personnage",
+      description: "Retourne l'identité, les ressources, les caractéristiques, les compétences et les talents actuellement visibles.",
+      inputSchema: { type: "object", properties: {}, additionalProperties: false },
+      annotations: { readOnlyHint: true, untrustedContentHint: true },
+      execute: () => JSON.parse(JSON.stringify(state))
+    };
+    const updateTool = {
+      name: "update_current_resources", title: "Mettre à jour les ressources",
+      description: "Modifie les valeurs actuelles de PV, mana, endurance ou armure, puis actualise la fiche visible.",
+      inputSchema: { type: "object", properties: { health: { type:"integer", minimum:0 }, mana: { type:"integer", minimum:0 }, stamina: { type:"integer", minimum:0 }, temporaryArmor: { type:"integer", minimum:0, maximum:9999 } }, additionalProperties:false },
+      annotations: { readOnlyHint: false, untrustedContentHint: false },
+      execute: input => {
+        if (!input || typeof input !== "object" || Array.isArray(input)) throw new Error("Valeurs invalides");
+        const rules = { health:[0,totalMax("health")], mana:[0,totalMax("mana")], stamina:[0,totalMax("stamina")], temporaryArmor:[0,9999] };
+        for (const [key,value] of Object.entries(input)) {
+          if (!rules[key] || !Number.isInteger(value) || value < rules[key][0] || value > rules[key][1]) throw new Error(`Valeur invalide pour ${key}`);
+        }
+        if (Number.isInteger(input.health)) state.health = clampInt(input.health,0,totalMax("health"));
+        if (Number.isInteger(input.mana)) state.mana = clampInt(input.mana,0,totalMax("mana"));
+        if (Number.isInteger(input.stamina)) state.stamina = clampInt(input.stamina,0,totalMax("stamina"));
+        if (Number.isInteger(input.temporaryArmor)) state.temporaryArmor = clampInt(input.temporaryArmor,0,9999);
+        persist(); render();
+        return { health:state.health, mana:state.mana, stamina:state.stamina, temporaryArmor:state.temporaryArmor };
+      }
+    };
+    Promise.resolve(context.registerTool(readTool)).catch(() => {});
+    Promise.resolve(context.registerTool(updateTool)).catch(() => {});
+  }
+
+  render();
+  registerWebMcp();
+  // Le fichier autonome ne dépend d’aucun service externe.
+})();
+
+  </script>
+</body>
+</html>
+
